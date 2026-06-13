@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --card: 222 47% 6%;
+    --card-foreground: 213 31% 91%;
+    --border: 223 47% 11%;
+    --input: 224 71% 2%;
+    --primary: 250 89% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 47% 10%;
+    --secondary-foreground: 215 20% 65%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 16% 50%;
+    --accent: 250 89% 65%;
+    --accent-foreground: 0 0% 100%;
+    --ring: 250 89% 65%;
+    --radius: 0.85rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.react-flow {
+  background:
+    radial-gradient(
+      circle at 25% 15%,
+      rgba(139, 92, 246, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(6, 182, 212, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #050816 0%, #020617 45%, #01040f 100%) !important;
+}
+
+.react-flow__background {
+  opacity: 0.18;
+}
+
+.react-flow__edge-path {
+  stroke: #1e293b !important;
+  stroke-width: 2.5 !important;
+  transition:
+    stroke 0.2s ease,
+    stroke-width 0.2s ease;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: hsl(var(--primary)) !important;
+  stroke-width: 3 !important;
+}
+
+.react-flow__edge.animated .react-flow__edge-path {
+  stroke: hsl(var(--primary)) !important;
+  stroke-dasharray: 6;
+  animation: flowEdgeAnim 25s linear infinite;
+}
+
+@keyframes flowEdgeAnim {
+  from {
+    stroke-dashoffset: 200;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.react-flow__connection-path {
+  stroke: hsl(var(--primary)) !important;
+  stroke-width: 2.5 !important;
+  stroke-dasharray: 4;
+}
+
+.react-flow__nodesselection-rect,
+.react-flow__selectionrect {
+  background: rgba(99, 102, 241, 0.04) !important;
+  border: 1px dashed hsl(var(--primary)) !important;
+}
+
+.react-flow__node {
+  outline: none !important;
+}
+
+.react-flow-node-container {
+  transition:
+    box-shadow 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+}
+
+.react-flow__node.selected .react-flow-node-container {
+  border-color: rgba(99, 102, 241, 0.6) !important;
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.6),
+    0 10px 30px -10px rgba(0, 0, 0, 0.7),
+    0 0 20px 2px rgba(99, 102, 241, 0.15) !important;
+}
+
+.flow-handle {
+  width: 10px !important;
+  height: 10px !important;
+  border: 2px solid hsl(var(--card)) !important;
+  border-radius: 9999px !important;
+  transition:
+    transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.15s ease !important;
+  z-index: 50 !important;
+}
+
+.flow-handle:hover {
+  transform: scale(1.4) !important;
+}
+
+.flow-handle-input {
+  background: #6366f1 !important;
+  left: -5px !important;
+}
+.flow-handle-input:hover {
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.3) !important;
+}
+
+.flow-handle-output {
+  background: #10b981 !important;
+  right: -5px !important;
+}
+.flow-handle-output:hover {
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.3) !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 99px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.4);
+}

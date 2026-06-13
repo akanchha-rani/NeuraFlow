@@ -1,0 +1,38 @@
+# NeuraFlow
+
+### Build. Connect. Execute.
+
+NeuraFlow is a visual AI workflow builder developed for the VectorShift Frontend Technical Assessment.
+
+## Features
+
+* Reusable node abstraction using a common BaseNode component.
+* 5 additional custom nodes: API Call, Condition, Transform, Merge, and Note.
+* Dynamic Text Node with auto-resizing and variable detection (`{{variable}}`).
+* Automatic generation of input handles for detected variables.
+* Modern SaaS-inspired UI built with React Flow and Tailwind CSS.
+* Backend integration with FastAPI for pipeline analysis.
+* DAG (Directed Acyclic Graph) validation with node and edge statistics.
+
+## Tech Stack
+
+**Frontend:** React, React Flow, Zustand, Tailwind CSS
+
+**Backend:** FastAPI, Pydantic
+
+## Run Locally
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+### Backend
+
+```bash
+cd backend
+uvicorn main:app --reload
+```
