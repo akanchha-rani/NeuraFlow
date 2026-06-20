@@ -32,7 +32,7 @@ NeuraFlow lets you design, connect, and run AI pipelines visually. Drag and drop
 ### 1. Clone the repository
  
 ```bash
-git clone https://github.com/your-username/neuraflow.git
+git clone https://github.com/akanchha-rani/NeuraFlow
 cd neuraflow
 ```
  
