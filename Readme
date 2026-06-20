@@ -1,10 +1,9 @@
 # NeuraFlow
  
-> **Build. Connect. Execute.** — A visual AI workflow builder powered by React Flow and FastAPI.
+**Build. Connect. Execute.** — A visual AI workflow builder powered by React Flow and FastAPI.
  
 NeuraFlow lets you design, connect, and run AI pipelines visually. Drag and drop nodes onto a canvas, wire them together, and send the resulting DAG to a FastAPI backend for validation and execution.
- 
----
+
  
 ## Features
  
@@ -14,7 +13,6 @@ NeuraFlow lets you design, connect, and run AI pipelines visually. Drag and drop
 - **DAG validation** — Submits your pipeline to the backend and returns node/edge statistics along with cycle detection.
 - **Modern SaaS UI** — Built with React Flow and Tailwind CSS for a clean, professional canvas experience.
 - **FastAPI backend** — Lightweight Python backend using Pydantic for pipeline schema validation and analysis.
----
  
 ## Tech Stack
  
@@ -23,7 +21,6 @@ NeuraFlow lets you design, connect, and run AI pipelines visually. Drag and drop
 | Frontend | React, React Flow, Zustand, Tailwind CSS |
 | Backend | FastAPI, Pydantic |
  
----
  
 ## Getting Started
  
@@ -61,7 +58,6 @@ The API will be available at `http://localhost:8000`.
  
 > Make sure both the frontend and backend are running simultaneously for full functionality.
  
----
  
 ## Project Structure
  
@@ -79,8 +75,6 @@ neuraflow/
 └── README.md
 ```
  
----
- 
 ## How It Works
  
 1. **Build** — Drag nodes from the sidebar onto the canvas.
@@ -88,7 +82,6 @@ neuraflow/
 3. **Execute** — Click **Run Pipeline** to send the graph to the FastAPI backend, which validates the DAG and returns pipeline statistics.
 The backend checks for cycles, counts nodes and edges, and confirms whether the submitted graph is a valid DAG before execution.
  
----
  
  
 ### `POST /pipelines/parse`
@@ -112,8 +105,7 @@ Accepts a serialized pipeline and returns validation results.
   "is_dag": true
 }
 ```
- 
----
+
  
 ## Roadmap
  
@@ -122,7 +114,6 @@ Accepts a serialized pipeline and returns validation results.
 - [ ] More built-in node types (LLM, File I/O, HTTP Webhook)
 - [ ] Export pipeline as JSON/YAML
 - [ ] Authentication and user workspaces
----
  
 ## Contributing
  
@@ -133,7 +124,6 @@ Contributions are welcome! Please open an issue first to discuss what you'd like
 3. Commit your changes (`git commit -m 'Add your feature'`)
 4. Push to the branch (`git push origin feature/your-feature`)
 5. Open a pull request
----
  
 ## License
  
