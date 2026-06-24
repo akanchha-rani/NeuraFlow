@@ -1,18 +1,18 @@
 # NeuraFlow
  
-**Build. Connect. Execute.** — A visual AI workflow builder powered by React Flow and FastAPI.
+Build. Connect. Execute. — A visual AI workflow builder powered by React Flow and FastAPI.
  
 NeuraFlow lets you design, connect, and run AI pipelines visually. Drag and drop nodes onto a canvas, wire them together, and send the resulting DAG to a FastAPI backend for validation and execution.
 
  
 ## Features
  
-- **Reusable node abstraction** — A common `BaseNode` component powers all node types for consistent styling and behavior.
-- **5 custom node types** — `API Call`, `Condition`, `Transform`, `Merge`, and `Note` nodes out of the box.
-- **Dynamic Text Node** — Auto-resizes as you type and detects `{{variable}}` placeholders, automatically generating input handles for each variable.
-- **DAG validation** — Submits your pipeline to the backend and returns node/edge statistics along with cycle detection.
-- **Modern SaaS UI** — Built with React Flow and Tailwind CSS for a clean, professional canvas experience.
-- **FastAPI backend** — Lightweight Python backend using Pydantic for pipeline schema validation and analysis.
+- Reusable node abstraction — A common `BaseNode` component powers all node types for consistent styling and behavior.
+- 5 custom node types — `API Call`, `Condition`, `Transform`, `Merge`, and `Note` nodes out of the box.
+- Dynamic Text Node — Auto-resizes as you type and detects `{{variable}}` placeholders, automatically generating input handles for each variable.
+- DAG validation — Submits your pipeline to the backend and returns node/edge statistics along with cycle detection.
+- Modern SaaS UI — Built with React Flow and Tailwind CSS for a clean, professional canvas experience.
+- FastAPI backend — Lightweight Python backend using Pydantic for pipeline schema validation and analysis.
  
 ## Tech Stack
  
