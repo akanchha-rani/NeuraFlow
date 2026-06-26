@@ -1,102 +1,186 @@
-# NeuraFlow
- 
-Build. Connect. Execute. — A visual AI workflow builder powered by React Flow and FastAPI.
- 
-NeuraFlow lets you design, connect, and run AI pipelines visually. Drag and drop nodes onto a canvas, wire them together, and send the resulting DAG to a FastAPI backend for validation and execution.
+# 🚀 NeuraFlow
 
- 
-## Features
- 
-- Reusable node abstraction — A common `BaseNode` component powers all node types for consistent styling and behavior.
-- 5 custom node types — `API Call`, `Condition`, `Transform`, `Merge`, and `Note` nodes out of the box.
-- Dynamic Text Node — Auto-resizes as you type and detects `{{variable}}` placeholders, automatically generating input handles for each variable.
-- DAG validation — Submits your pipeline to the backend and returns node/edge statistics along with cycle detection.
-- Modern SaaS UI — Built with React Flow and Tailwind CSS for a clean, professional canvas experience.
-- FastAPI backend — Lightweight Python backend using Pydantic for pipeline schema validation and analysis.
- 
-## Tech Stack
- 
-| Layer | Technology |
-|---|---|
+**Build. Connect. Execute.**
+
+A visual AI workflow builder powered by **React Flow** and **FastAPI**.
+
+NeuraFlow lets you design, connect, and execute AI pipelines visually. Drag and drop nodes onto a canvas, wire them together, and submit the resulting DAG to a FastAPI backend for validation and execution.
+
+---
+
+# ✨ Features
+
+* ♻️ **Reusable Node Architecture**
+
+  * Common `BaseNode` component for consistent styling and scalability.
+
+* 🧩 **5 Custom Node Types**
+
+  * API Call
+  * Condition
+  * Transform
+  * Merge
+  * Note
+
+* 📝 **Dynamic Text Node**
+
+  * Automatically resizes while typing.
+  * Detects `{{variable}}` placeholders.
+  * Creates input handles dynamically for each detected variable.
+
+* 🔗 **Visual Workflow Builder**
+
+  * Drag-and-drop canvas powered by React Flow.
+  * Interactive node connections.
+
+* ✅ **DAG Validation**
+
+  * Sends the workflow to the FastAPI backend.
+  * Detects cycles.
+  * Returns node and edge statistics.
+  * Confirms whether the graph is a valid DAG.
+
+* 🎨 **Modern SaaS UI**
+
+  * Responsive interface.
+  * Tailwind CSS styling.
+  * Clean node design.
+
+* ⚡ **FastAPI Backend**
+
+  * Lightweight Python backend.
+  * Pydantic-based schema validation.
+  * Pipeline analysis and validation.
+
+---
+
+# 🛠 Tech Stack
+
+| Layer    | Technology                               |
+| -------- | ---------------------------------------- |
 | Frontend | React, React Flow, Zustand, Tailwind CSS |
-| Backend | FastAPI, Pydantic |
- 
- 
-## Getting Started
- 
-### Prerequisites
- 
-- Node.js (v18+ recommended)
-- Python 3.9+
-- pip
-### 1. Clone the repository
- 
-```bash
-git clone https://github.com/akanchha-rani/NeuraFlow
-cd neuraflow
-```
- 
-### 2. Start the frontend
- 
-```bash
-cd frontend
-npm install
-npm start
-```
- 
-The app will be available at `http://localhost:3000`.
- 
-### 3. Start the backend
- 
-```bash
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
- 
-The API will be available at `http://localhost:8000`.
- 
-> Make sure both the frontend and backend are running simultaneously for full functionality.
- 
- 
-## Project Structure
- 
-```
-neuraflow/
+| Backend  | FastAPI, Pydantic                        |
+| Language | JavaScript, Python                       |
+
+---
+
+# 📂 Project Structure
+
+```text
+NeuraFlow/
+│
 ├── frontend/
 │   ├── src/
-│   │   ├── nodes/          # BaseNode + all custom node types
-│   │   ├── store/          # Zustand state management
-│   │   └── App.jsx         # Root component with React Flow canvas
+│   │   ├── nodes/
+│   │   ├── store/
+│   │   └── App.jsx
+│   │
 │   └── package.json
+│
 ├── backend/
-│   ├── main.py             # FastAPI app with pipeline validation endpoint
+│   ├── main.py
 │   └── requirements.txt
+│
 └── README.md
 ```
- 
-## How It Works
- 
-1. **Build** — Drag nodes from the sidebar onto the canvas.
-2. **Connect** — Wire nodes together by dragging from output to input handles.
-3. **Execute** — Click **Run Pipeline** to send the graph to the FastAPI backend, which validates the DAG and returns pipeline statistics.
-The backend checks for cycles, counts nodes and edges, and confirms whether the submitted graph is a valid DAG before execution.
- 
- 
- 
-### `POST /pipelines/parse`
- 
-Accepts a serialized pipeline and returns validation results.
- 
-**Request body:**
+
+---
+
+# 🚀 Getting Started
+
+## Prerequisites
+
+* Node.js (v18+)
+* Python 3.9+
+* pip
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/akanchha-rani/NeuraFlow.git
+
+cd NeuraFlow
+```
+
+## Start the Frontend
+
+```bash
+cd frontend
+
+npm install
+
+npm start
+```
+
+The frontend runs at:
+
+```text
+http://localhost:3000
+```
+
+## Start the Backend
+
+```bash
+cd backend
+
+pip install -r requirements.txt
+
+uvicorn main:app --reload
+```
+
+The backend runs at:
+
+```text
+http://localhost:8000
+```
+
+> **Note:** Both frontend and backend must be running simultaneously.
+
+---
+
+# ⚙️ How It Works
+
+### 1. Build
+
+Drag nodes from the sidebar onto the canvas.
+
+### 2. Connect
+
+Create workflows by connecting nodes through their input and output handles.
+
+### 3. Execute
+
+Click **Run Pipeline**.
+
+The workflow is serialized and sent to the FastAPI backend.
+
+The backend:
+
+* validates the graph
+* detects cycles
+* counts nodes
+* counts edges
+* verifies whether the graph is a valid DAG
+
+---
+
+# 📡 API
+
+## POST `/pipelines/parse`
+
+Validates the submitted pipeline.
+
+### Request
+
 ```json
 {
   "nodes": [...],
   "edges": [...]
 }
 ```
- 
-**Response:**
+
+### Response
+
 ```json
 {
   "status": "success",
@@ -106,26 +190,52 @@ Accepts a serialized pipeline and returns validation results.
 }
 ```
 
- 
-## Roadmap
- 
-- [ ] Node execution runtime
-- [ ] Save and load pipeline configurations
-- [ ] More built-in node types (LLM, File I/O, HTTP Webhook)
-- [ ] Export pipeline as JSON/YAML
-- [ ] Authentication and user workspaces
- 
-## Contributing
- 
-Contributions are welcome! Please open an issue first to discuss what you'd like to change, then submit a pull request.
- 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/your-feature`)
-3. Commit your changes (`git commit -m 'Add your feature'`)
-4. Push to the branch (`git push origin feature/your-feature`)
-5. Open a pull request
- 
-## License
- 
-This project is licensed under the [MIT License](LICENSE).
- 
+---
+
+# 📌 Roadmap
+
+* [ ] Execute workflow runtime
+* [ ] Save and load pipelines
+* [ ] Export pipelines as JSON/YAML
+* [ ] Authentication
+* [ ] User workspaces
+* [ ] More node types
+
+  * LLM
+  * File I/O
+  * HTTP Webhook
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository.
+2. Create a feature branch.
+
+```bash
+git checkout -b feature/your-feature
+```
+
+3. Commit your changes.
+
+```bash
+git commit -m "Add your feature"
+```
+
+4. Push your branch.
+
+```bash
+git push origin feature/your-feature
+```
+
+5. Open a Pull Request.
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+See the `LICENSE` file for more information.
