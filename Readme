@@ -6,8 +6,6 @@ A visual AI workflow builder powered by **React Flow** and **FastAPI**.
 
 NeuraFlow lets you design, connect, and execute AI pipelines visually. Drag and drop nodes onto a canvas, wire them together, and submit the resulting DAG to a FastAPI backend for validation and execution.
 
----
-
 # ✨ Features
 
 * ♻️ **Reusable Node Architecture**
@@ -52,8 +50,6 @@ NeuraFlow lets you design, connect, and execute AI pipelines visually. Drag and 
   * Pydantic-based schema validation.
   * Pipeline analysis and validation.
 
----
-
 # 🛠 Tech Stack
 
 | Layer    | Technology                               |
@@ -61,8 +57,6 @@ NeuraFlow lets you design, connect, and execute AI pipelines visually. Drag and 
 | Frontend | React, React Flow, Zustand, Tailwind CSS |
 | Backend  | FastAPI, Pydantic                        |
 | Language | JavaScript, Python                       |
-
----
 
 # 📂 Project Structure
 
@@ -83,8 +77,6 @@ NeuraFlow/
 │
 └── README.md
 ```
-
----
 
 # 🚀 Getting Started
 
@@ -162,8 +154,6 @@ The backend:
 * counts edges
 * verifies whether the graph is a valid DAG
 
----
-
 # 📡 API
 
 ## POST `/pipelines/parse`
@@ -205,8 +195,6 @@ Validates the submitted pipeline.
   * File I/O
   * HTTP Webhook
 
----
-
 # 🤝 Contributing
 
 Contributions are welcome!
@@ -231,8 +219,6 @@ git push origin feature/your-feature
 ```
 
 5. Open a Pull Request.
-
----
 
 # 📄 License
 
