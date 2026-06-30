@@ -1,8 +1,8 @@
 # 🚀 NeuraFlow
 
-**Build. Connect. Execute.**
+Build. Connect. Execute.
 
-A visual AI workflow builder powered by **React Flow** and **FastAPI**.
+A visual AI workflow builder powered by React Flow and FastAPI.
 
 NeuraFlow lets you design, connect, and execute AI pipelines visually. Drag and drop nodes onto a canvas, wire them together, and submit the resulting DAG to a FastAPI backend for validation and execution.
 
@@ -12,7 +12,7 @@ NeuraFlow lets you design, connect, and execute AI pipelines visually. Drag and 
 
   * Common `BaseNode` component for consistent styling and scalability.
 
-* 🧩 **5 Custom Node Types**
+* 🧩 5 Custom Node Types
 
   * API Call
   * Condition
@@ -20,31 +20,31 @@ NeuraFlow lets you design, connect, and execute AI pipelines visually. Drag and 
   * Merge
   * Note
 
-* 📝 **Dynamic Text Node**
+* 📝 Dynamic Text Node
 
   * Automatically resizes while typing.
   * Detects `{{variable}}` placeholders.
   * Creates input handles dynamically for each detected variable.
 
-* 🔗 **Visual Workflow Builder**
+* 🔗 Visual Workflow Builder
 
   * Drag-and-drop canvas powered by React Flow.
   * Interactive node connections.
 
-* ✅ **DAG Validation**
+* ✅ DAG Validation
 
   * Sends the workflow to the FastAPI backend.
   * Detects cycles.
   * Returns node and edge statistics.
   * Confirms whether the graph is a valid DAG.
 
-* 🎨 **Modern SaaS UI**
+* 🎨 Modern SaaS UI
 
   * Responsive interface.
   * Tailwind CSS styling.
   * Clean node design.
 
-* ⚡ **FastAPI Backend**
+* ⚡ FastAPI Backend
 
   * Lightweight Python backend.
   * Pydantic-based schema validation.
@@ -142,7 +142,7 @@ Create workflows by connecting nodes through their input and output handles.
 
 ### 3. Execute
 
-Click **Run Pipeline**.
+Click Run Pipeline.
 
 The workflow is serialized and sent to the FastAPI backend.
 
@@ -179,8 +179,6 @@ Validates the submitted pipeline.
   "is_dag": true
 }
 ```
-
----
 
 # 📌 Roadmap
 
@@ -222,5 +220,5 @@ git push origin feature/your-feature
 
 # 📄 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the MIT License.
 
